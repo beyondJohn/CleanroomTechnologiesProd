@@ -35,21 +35,21 @@
               </button>
               <a class="navbar-brand" href="#" style="position:relative; top:-10px;">Cleanroom<br />Technologies.com</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse" ng-include="'Views/Include/TopNav.html'">
+            <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <!--<li class="active"><a href="#">Home</a></li>-->
                 <li><a href="../Views/PPA.html">Pharma Production Areas</a></li>
                 <li><a href="../Views/USP797.html">USP 797</a></li>
-                  <li><a href="#USP797">ESD Coatings</a></li>
+                  <li><a href="../Views/ESD.html">ESD Coatings</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Featured Products<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Hepa Filters</a></li>
-                    <li><a href="#">Modular Cleanrooms</a></li>
-                    <li><a href="#">Laminar Benches</a></li>
-                    <li role="separator" class="divider"></li>
+                    <li><a href="../Views/PPA.html#/HEPA">Hepa Filters</a></li>
+                    <li><a href="../Views/PPA.html#/Modular">Modular Cleanrooms</a></li>
+                    <li><a href="../Views/PPA.html#/BSC">Biological Safety Cabinets</a></li>
+                    <!--<li role="separator" class="divider"></li>
                     <li class="dropdown-header">Consumables</li>
-                    <li><a href="#">Gloves</a></li>
+                    <li><a href="Views/USP797.html#/Consumables/?ddselect=8">Gloves</a></li>
                     <li><a href="#">Hairnets</a></li>
                     <li><a href="#">Sticky/Tack Mats</a></li>
                     <li><a href="#">Disinfectants</a></li>
@@ -57,7 +57,7 @@
                     <li><a href="#">Lab Coats</a></li>
                     <li><a href="#">Coveralls</a></li>
                     <li><a href="#">Overshoes</a></li>
-                    <li><a href="#">Oversleeves</a></li>
+                    <li><a href="#">Oversleeves</a></li>-->
                   </ul>
                 </li>
               </ul>
@@ -87,7 +87,7 @@
             <div class="carousel-caption">
               <h1>ISO Class Cleanrooms</h1>
               <p style="background-color: #332626; border:1px solid black; border-radius:5px; padding:5px; opacity:.6;"><span >ISO Class 5 - 8 Cleanroom Design, Installation, and Validation for Pharmaceutical Production Areas, Semiconductor Manufacturing, USP 797 Compounding Areas</span></p>
-              <p><a class="btn btn-lg btn-primary" href="../Views/PPA.html#/Modular#2" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="../Views/PPA.html#/Modular" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
             <div class="carousel-caption">
               <h1>Cleanroom Consumables</h1>
               <p style="background-color: #332626; border:1px solid black; border-radius:5px; padding:5px; opacity:.6;">Coveralls, Hair Nets, Gloves, Goggles, Overshoes, Wipes, Disinfectants, Sticky Mats</p>
-              <p><a class="btn btn-lg btn-primary" href="Views/USP797.html#/Consumables#2" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="../Views/USP797.html#/Consumables" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
             <div class="carousel-caption">
               <h1>Static Dissipative Solutions</h1>
               <p>Electrostatic discharge materials (ESD materials) that reduce static electricity to protect electrostatic-sensitive devices (ESD) or contain flammable liquids or gases.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="../Views/ESD.html#/Softwall" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -135,19 +135,19 @@
           <img class="img-circle" src="../Images/rx.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>USP 797</h2>
           <p>Providing a full suite of products and services to meet standards set forth in United States Pharmacopia Chapter 797.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="../Views/PPA.html#/Modular" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-sm-4">
           <img class="img-circle" src="../Images/caduceus2.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Pharmaceutical Production</h2>
           <p>The Medical Industries first line of defense: Pharmaceutical production areas. Find products and services targeting ISO Cleanroom standards.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="../Views/USP797.html#/Consumables" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-sm-4">
           <img class="img-circle" src="../Images/semiconductor.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Semiconductor Production</h2>
           <p>Where static electricity is the foe. Select products and services to create Static Dissipative Solutions and to protect Electrostatic-Sensitive Devices.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="../Views/USP797.html#/ESD" role="button">View details &raquo;</a></p>
         </div>  <!-- /.col-lg-4 -->
         <!-- /.col-lg-4 -->
       </div><!-- /.row -->

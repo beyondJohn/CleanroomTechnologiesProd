@@ -7,7 +7,10 @@ app.service('getJSONService', function ($http) {
         })
     };
 });
+app.service('selectedService', function () {
+    return {}
 
+});
 app.service('productService', function () {
     return {}
 

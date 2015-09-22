@@ -1,9 +1,9 @@
-﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives']);
+﻿var app = angular.module('esdApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives']);
 
 app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider.when('/', {
         controller: 'MainController',
-        templateUrl: 'USP797Index.html'
+        templateUrl: 'ESDIndex.html'
     }).when('/Modular', {
         controller: 'MainController',
         templateUrl: 'Modular.html'
@@ -22,18 +22,12 @@ app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     }).when('/Softwall', {
         controller: 'MainController',
         templateUrl: 'Softwall.html'
-    }).when('/ProductRecent', {
-        controller: 'MainController',
-        templateUrl: 'ProductRecent.html'
     }).when('/Product', {
         controller: 'MainController',
         templateUrl: 'Product.html'
-    }).when('/ESD', {
-        controller: 'MainController',
-        templateUrl: 'ESD.html'
     }).when('/AboutUs', {
         controller: 'AboutUsController',
-        templateUrl: 'AboutUs.html'
+        templateUrl: 'Views/AboutUs.html'
     });
     AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
     //$locationProvider.html5Mode(true);

@@ -79,10 +79,7 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
             else {
                 //console.log("got Here Start: " + recentlyViewedJSON);//works - do not edit
                 //console.log("got Here Start Too: " + $scope.recentlyViewed[0]);//works - do not edit
-                //if ($scope.recentlyViewed[9] != undefined) {
-                //    delete $scope.recentlyViewed[9];
-                //    console.log("$scope.recentlyViewed[1]; :"+ $scope.recentlyViewed[1]);
-                //}
+
                 if ($scope.recentlyViewed[i] == undefined) {
                     //Check if product already exists in recently viewed array
                     var checkRecentNew = JSON.parse(recentlyViewedJSON);
@@ -148,11 +145,15 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
     //Dynamic varibles which control page titles and headings
     $scope.title = "Cleanroom Products";
     $scope.Consumables = "Featured Consumables";
-    
+
     //myView is the navigation menu button click event with changeView parameters like Modular, consumables, etc...
     $scope.myView = function (changeView) {
-        $location.url(changeView);
         
+        $location.url(changeView);
+        console.log("consumables:" + changeView);
+        if (changeView == "consumables") {
+            console.log("consumables");
+        }
         $scope.title = "Cleanroom " + changeView;
         
     };

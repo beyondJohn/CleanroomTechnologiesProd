@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controllers\RouteControllerESD.js" />
     <Content Include="Controllers\RouteControllerPPA.js" />
     <Content Include="Images\rsz_checkmark.jpg" />
     <Content Include="Scripts\angular-sanitize.min.js" />
@@ -94,6 +95,8 @@
     <Content Include="Images\triangle.jpg" />
     <Content Include="Views\BSC.html" />
     <Content Include="Views\Include\TopNav.html" />
+    <Content Include="Views\ESD.html" />
+    <Content Include="Views\ESDIndex.html" />
     <Content Include="Views\PPAIndex.html" />
     <Content Include="Views\Product.html" />
     <Content Include="Views\PPA.html" />

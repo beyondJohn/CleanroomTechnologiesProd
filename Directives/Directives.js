@@ -182,6 +182,9 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
             items: '=',
             onEdit: '&'
         },
+        controller: function ($scope) {
+            //console.log("items: " + $scope.items)
+        },
         template: '<p>' +
           '<span id="item{{index}}" ng:repeat="(index, item) in items" '
         + 'class="col-sm-3" style="margin-left:auto; margin-right:auto; width:33%; text-align:center;'
@@ -194,7 +197,6 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
         '<br ng:show="(index+1)%4==0" />' +
         '</p>',
         link: function (scope, el, attrs) {
-            //console.log('newJP');
             $compile(el.contents())(scope.$new());
             scope.addToCart = function (index) {
                 var myEvent = index.target.attributes.data.value;//this connects the 'addToCart()' function// found code at http://stackoverflow.com/questions/18029261/getting-attribute-of-element-in-ng-click-function-in-angularjs
@@ -203,6 +205,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
                 var myEl = el[0].childNodes[oddArray[myEvent]].childNodes[8].value;
                 //console.log(el[0].childNodes[oddArray[myEvent]].childNodes[0].childNodes[0]);
                 //console.log(myEl);
+                
                 //$('#1').html('<h3 id="1" ng-bind="Consumables">Are You Kidding!</h3>');
             }
         }
