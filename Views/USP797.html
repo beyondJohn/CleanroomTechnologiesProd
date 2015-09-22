@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="MainController">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Cleanroom Technologies">
+    <meta name="author" content="Cleanroom Technologies">
+    <link rel="icon" href="../../Images//caduceusFavicon.ico">
+    <link href="../Style/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Style/NavBar.css" rel="stylesheet" />
+
+    <title ng-bind="title" ng-cloak>{{title}}</title>
+
+</head>
+<body >
+    <div id="top" class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/index.html" style="position:relative; top:-10px;">Cleanroom<br />Technologies.com</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <li><a href="../Views/PPA.html">Pharma Production Areas</a></li>
+                <li><a href="../Views/USP797.html">USP 797</a></li>
+                  <li><a href="#USP797">ESD Coatings</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Featured Products<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Hepa Filters</a></li>
+                    <li><a href="#">Modular Cleanrooms</a></li>
+                    <li><a href="#">Laminar Benches</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Consumables</li>
+                    <li><a href="#">Gloves</a></li>
+                    <li><a href="#">Hairnets</a></li>
+                    <li><a href="#">Sticky/Tack Mats</a></li>
+                    <li><a href="#">Disinfectants</a></li>
+                    <li><a href="#">Wipes</a></li>
+                    <li><a href="#">Lab Coats</a></li>
+                    <li><a href="#">Coveralls</a></li>
+                    <li><a href="#">Overshoes</a></li>
+                    <li><a href="#">Oversleeves</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+    </div>
+    <div class="container" style="text-align:right; color:black; font-size:x-large; font-weight:700; padding-left:30px; padding-right:30px;">
+        <span style="color:red;">Call Now!</span> <span style="color:#163587;">(800) 654-2373</span>
+    </div>
+    <div class="container" style="padding-left:30px; padding-right:30px;">
+        <!--<div class="navbar-wrapper">
+          <div class="container">
+            
+          </div>
+        </div>-->
+        <div id="navPage"  class="row" >
+            <div class="col-sm-2"><div id="Modular"  ng-click="myView('Modular')" style="color:white; cursor:pointer;">Modular<br class="hidden-xs" />Cleanrooms</div></div>
+            <div class="col-sm-2"><div id="Bio-Safety"  ng-click="myView('BSC')" style="color:white; cursor:pointer;">Bio-Safety<br class="hidden-xs" />Cabinets</div></div>
+            <div class="col-sm-2"><div id="HEPA"  ng-click="myView('HEPA')" style="color:white; cursor:pointer;">Hepa<br class="hidden-xs" /> Filtration</div></div>
+            <div class="col-sm-2"><div id="furniture"  ng-click="myView('Furniture')" style="color:white; cursor:pointer;">Cleanroom<br class="hidden-xs" /> Furniture</div></div>
+            <div class="col-sm-2"><div id="consumables" ng-click="myView('Consumables')" style="color:white;cursor:pointer;">Cleanroom<br class="hidden-xs" /> Consumables</div></div>
+            <div class="col-sm-2"><div id="Softwall"  ng-click="myView('Softwall')" style="color:white; cursor:pointer;">Softwall<br class="hidden-xs" />Cleanrooms</div></div>
+            <br />
+        </div>
+        <div ng-view></div>
+        
+    </div>
+    <div class="container" style="padding-left:30px; padding-right:30px;">
+        <hr />
+    <footer>
+        <p class="pull-right"><a id="aTop" ng-click="topClick()">Back to top</a></p>
+        <p>&copy; {{date | date:'yyyy'}} CleanroomTechnologies.com, LLC. &middot; <a>Privacy</a> &middot; <a>Terms</a></p>
+    </footer>
+    </div>
+
+</div>
+
+    <script src="../Scripts/Analytics.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-sanitize.min.js"></script>
+    <script src="../Scripts/Angularytics.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/angular-resource.min.js"></script>
+    <script src="../Controllers/RouteController.js"></script>
+    <script src="../Directives/Directives.js"></script>
+    <script src="../Services/Services.js"></script>
+    <script src="../Controllers/Controllers.js"></script>
+    <script src="../Controllers/ControllersMainExp.js"></script>
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script src="../Scripts/anchorScroll.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script>
+        var mystring = "";
+        var count = 0;
+        $('span').each(function () {
+            count++;
+            mystring += $(this).text();
+        });
+        //console.log(mystring);
+    </script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

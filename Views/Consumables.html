@@ -1,0 +1,10 @@
+﻿
+    <div> 
+        <br />
+        <label for="myConsumable"> Select Consumables: </label>
+        <jp-select-consumables1 id="2" name="myConsumable" ng-model="consumablesModel" optExp="t.name for t in myOptions" required='true'></jp-select-consumables1>
+        <hr  />
+        <h3 id="1" ng-bind="Consumables"></h3>
+        <div id="contDiv"><jp-product-scope1 items="booties" on-edit="viewProduct(ev,question)" ></jp-product-scope1></div>
+    
+    </div>

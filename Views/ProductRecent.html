@@ -1,0 +1,42 @@
+﻿
+<h3>Product</h3>
+<hr  />
+<form name="form" id="form" novalidate>
+<div class="container" id="2">
+    <div class="row">
+        <div class="col-sm-8" style="border:1px solid #808080; border-radius:4px; margin-right:10px;">
+             <table>
+                 <tr>
+                     <td style="width:60%; vertical-align:top;">
+                         <table style="width:100%;">
+                             <tr>
+                                 <td style="text-align:center;" >
+                                     <div id="divProduct"></div>
+                                     <jp-product-view-scope item="{{product}}" ng-model="product"></jp-product-view-scope>
+                                 </td>
+                             </tr>
+                         </table>
+                     </td>
+                     <td style="text-align:center; vertical-align:top;">
+                         <br />
+                         <span style="font-family:Garamond Arial Calibri; font-size:x-large; color:#163587;">Details</span>
+                         <br /><br />
+                         <div id="divDetails" style="text-align:left; padding-left:10px; font-size:small;"></div>
+                         <br /><br />
+                         <jp-details-scope item="{{details}}"></jp-details-scope>
+                         
+                     </td>
+                 </tr>
+             </table>
+        </div>
+        <div class="col-sm-3" style="border:1px solid #808080; border-radius:4px; text-align:center">
+            <br /><br />
+            Recently Viewed
+            <hr /><br />
+            <div id="divRecent" style="text-align:center; padding-left:10px; font-size:small;">You haven't viewed other items yet. This list will populate as you browse further. Thank you!</div>
+            <br /><br />
+            <jp-recently-viewed-scope item="{{recentlyViewed}}" recent="true" on-edit="viewProductFromRecentlyViewed(ev,location)"></jp-recently-viewed-scope>
+        </div>
+    </div>
+</div>
+</form>
