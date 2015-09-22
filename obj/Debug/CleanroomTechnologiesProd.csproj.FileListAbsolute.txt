@@ -3,3 +3,9 @@ C:\Users\joselowpc\Documents\Visual Studio 2012\Projects\CleanroomTechnologies\C
 C:\Users\joselowpc\Documents\Visual Studio 2012\Projects\CleanroomTechnologies\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.csprojResolveAssemblyReference.cache
 C:\Users\joselowpc\Documents\Visual Studio 2012\Projects\CleanroomTechnologies\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.dll
 C:\Users\joselowpc\Documents\Visual Studio 2012\Projects\CleanroomTechnologies\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.pdb
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\bin\CleanroomTechnologiesProd.dll.config
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\bin\CleanroomTechnologiesProd.dll
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\bin\CleanroomTechnologiesProd.pdb
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.csprojResolveAssemblyReference.cache
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.dll
+C:\Users\joselowpc\Source\Repos\CleanroomTechnologiesProd\obj\Debug\CleanroomTechnologiesProd.pdb

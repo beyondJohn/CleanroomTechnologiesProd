@@ -44,7 +44,6 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
             $scope.myJSON = $scope.checkQuestion;
             //console.log($scope.myJSON.Listing.Title);
             productJSON = JSON.parse(JSON.stringify($scope.checkQuestion, null, 4));
-            //console.log("about to change page");
         }
         else {
             $scope.myJSON = ev.target.attributes.data.value;

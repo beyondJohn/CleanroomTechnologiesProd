@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,6 +93,7 @@
     <Content Include="Images\Slider1.jpg" />
     <Content Include="Images\triangle.jpg" />
     <Content Include="Views\BSC.html" />
+    <Content Include="Views\Include\TopNav.html" />
     <Content Include="Views\PPAIndex.html" />
     <Content Include="Views\Product.html" />
     <Content Include="Views\PPA.html" />
