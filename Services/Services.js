@@ -7,6 +7,10 @@ app.service('getJSONService', function ($http) {
         })
     };
 });
+app.service('landingPageService', function () {
+    return {}
+
+});
 app.service('selectedService', function () {
     return {}
 

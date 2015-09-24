@@ -1,14 +1,41 @@
 ﻿
 app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll', '$document', '$rootScope', '$timeout', 
-    'productService','detailsService', 'recentlyViewedService', 'masterJSONService','routeTrackingService',
+    'productService','detailsService', 'recentlyViewedService', 'masterJSONService','routeTrackingService', 'landingPageService',
     function ($scope, $http, $location, $anchorScroll, $document, $rootScope, $timeout, productService, detailsService,
-        recentlyViewedService, masterJSONService, routeTrackingService)
-{
+        recentlyViewedService, masterJSONService, routeTrackingService, landingPageService)
+    {
+        //start accordian
+        $scope.oneAtATime = true;
+
+        $scope.groups = [
+          {
+              title: 'Dynamic Group Header - 1',
+              content: 'Dynamic Group Body - 1'
+          },
+          {
+              title: 'Dynamic Group Header - 2',
+              content: 'Dynamic Group Body - 2'
+          }
+        ];
+
+        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+        $scope.addItem = function () {
+            var newItemNo = $scope.items.length + 1;
+            $scope.items.push('Item ' + newItemNo);
+        };
+
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+        //finish accordian
     //'$scope.product = productService' attaches $scope.product to the 'productService' service 
     $scope.product = productService;
     $scope.details = detailsService;
     $scope.recentlyViewed = recentlyViewedService;
-
+    
+    //$scope.landingpageJSON = landingPageService;
     //$scope.viewProduct is called when user clicks on title of product to view product details
     $scope.viewProductFromRecentlyViewed = function (ev, location) {
         
@@ -39,6 +66,7 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         //get item JSON passed via the click event
         $scope.myJSON = [];
         var productJSON = [];
+        
         if (ev.target == undefined) {
             //console.log("Undefinedooed!");
             $scope.myJSON = $scope.checkQuestion;
@@ -263,6 +291,21 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         console.log("masterJSON: " + $scope.masterJSON.length);
     });
     masterJSONService = $scope.masterJSON;
+    var landingJSON = [];
+    $http.get('../JSON/landingpage.json').success(function (data) {
+        $scope.landingpageJSON = data;
+        landingJSON = JSON.parse(JSON.stringify(data));
+        //console.log("$scope.landingpage: " + JSON.parse(JSON.stringify($scope.landingpageJSON)));
+        $scope.landingpage = JSON.parse(JSON.stringify($scope.landingpageJSON));
+        landingPageService = $scope.landingpage;
+        for (i = 0; i < 2; i++) {
+            console.log("checking: " + $scope.landingpage[i].product);
+            console.log("checking Service: " + landingPageService[i].product);
+        }
+    });
+    
+        //$scope.landingpage.title = landingPageService.title,
+    //$scope.landingpage.product = landingPageService.product;
     //End verbose getJSON data files, refactor when possible
     
 }]);

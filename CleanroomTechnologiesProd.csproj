@@ -58,8 +58,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controllers\accordianController.js" />
     <Content Include="Controllers\RouteControllerESD.js" />
     <Content Include="Controllers\RouteControllerPPA.js" />
+    <Content Include="Directives\DirectiveLandingPages.js" />
     <Content Include="Images\rsz_checkmark.jpg" />
     <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="JSON\FingerCots.json" />
@@ -70,6 +72,27 @@
     <Content Include="JSON\BioSafetyCabinets.json" />
     <Content Include="JSON\Softwall.json" />
     <Content Include="JSON\Modular.json" />
+    <Content Include="JSON\LandingPage.json" />
+    <Content Include="JSON\Booties - Copy.json" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="JSON - Copy\BioSafetyCabinets.json" />
+    <Content Include="JSON - Copy\Booties - Copy.json" />
+    <Content Include="JSON - Copy\Booties.json" />
+    <Content Include="JSON - Copy\BouffantBeard.json" />
+    <Content Include="JSON - Copy\Coats.json" />
+    <Content Include="JSON - Copy\Coveralls.json" />
+    <Content Include="JSON - Copy\ddConsumables.json" />
+    <Content Include="JSON - Copy\FacemasksHoods.json" />
+    <Content Include="JSON - Copy\FingerCots.json" />
+    <Content Include="JSON - Copy\Furniture.json" />
+    <Content Include="JSON - Copy\GlovesLatex.json" />
+    <Content Include="JSON - Copy\GlovesNitrile.json" />
+    <Content Include="JSON - Copy\GlovesVinyl.json" />
+    <Content Include="JSON - Copy\Hepa.json" />
+    <Content Include="JSON - Copy\LandingPage.json" />
+    <Content Include="JSON - Copy\Modular.json" />
+    <Content Include="JSON - Copy\Softwall.json" />
+    <Content Include="JSON - Copy\StickyMats.json" />
     <None Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Views\Consumables.html" />
     <Content Include="Controllers\Controllers.js" />
@@ -126,7 +149,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addProductTypeToJSONFiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="JSON\Booties.json" />
