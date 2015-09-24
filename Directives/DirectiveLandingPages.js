@@ -35,7 +35,7 @@
                         scope.pageContent +=
                         '<accordion-group style="text-align:center;" heading="' +
                         nameArray[i] + ' ( ' + countProducts + ' ) ' +
-                        '" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">';
+                        '" is-disabled="status.isFirstDisabled">';
                         for (f = 0; f < (scope.checkMaster.length - 1) ; f++) {
                             if (nameArray[i] == scope.checkMaster[f].Category) {
                                 scope.pageContent += '' +

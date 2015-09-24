@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives']);
+﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives', 'ngAnimate', 'ui.bootstrap']);
 
 app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider.when('/', {
