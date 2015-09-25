@@ -6,7 +6,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
         replace: true,
         link: function (scope, el, attrs) {
             var productJSON = JSON.parse(attrs.item);
-            //console.log("Attrs: " + attrs.item);
+            console.log("jpProductViewScopeAttrs: " + attrs.item);
             scope.buildProduct = "";
             scope.product = productJSON;
             //console.log("scope.product: " + productJSON.title);
@@ -14,14 +14,15 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
             //    console.log('Scope changed ATTRS! ' + productJSON.title);
 
             //});
-
+            
             scope.buildProduct += "<br /><span style=\"font-family:Arial Calibri; font-size:x-large;\">" + productJSON.title + "</span>"
             +"<br /><br />"
             +"<img src=\"" + productJSON.img + "\" style=\"max-height:270px;\"  />"
             + "<br /><br />"
             + "<span style=\"font-family: Arial Calibri; font-size:large; padding-top:10px; color:#163587;\">" + productJSON.price + "</span><br /><br />";
-                
-            $('#divProduct').html(scope.buildProduct);
+            
+            $compile($('#divProduct').html(scope.buildProduct))(scope);
+            
         }
     };
 }).directive('jpRecentlyViewedScope', function ($compile) {
@@ -34,7 +35,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
         }
         ,
         link: function (scope, el, attrs) {
-            scope.CheckIfRequestedByRecentlyViewed = attrs.recent;
+            scope.CheckIfRequestedByRecentlyViewed = attrs.item;
             //console.log("CheckIfRequestedByRecentlyViewed" + scope.CheckIfRequestedByRecentlyViewed);
             scope.addToCart = function (ev, index) {
                 scope.recentlySelectedProduct = ev.target.attributes.data.value;
@@ -50,7 +51,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
                 recentArray.unshift(scope.Products[i]);
                 //console.log("scope.Products[i]" + scope.Products[i]);
             }
-            //console.log("recentArray.unshift: " + recentArray);
+            console.log("jpRecentlyViewedScopeRecentArray.unshift: " + recentArray);
             for (i = 0; i < 50; i++) {
                 //recently viewed PAGE grabs the current product being viewed and adds it to the recently viewed CONTAINER
                 if (scope.CheckIfRequestedByRecentlyViewed != undefined) {
@@ -131,7 +132,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
             //console.log("After Loop: " + scope.Details[10]);
             $('#divDetails').html(scope.buildDetails);
             //$compile($('#divDetails').html('<jp-details-scope items="' + attrs.item + '" ></jp-details-scope>'))(scope);
-            //console.log(attrs.item);
+            console.log("jpDetailsScope:" + attrs.item);
             scope.internalControl = "Hey There Control Internal";
         }
     };
@@ -169,7 +170,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
                     $('#1').html('<h3 id="1" ng-bind="Consumables">' + model.name + '</h3>');
                     //$compile($('#contDiv').html('<questions items="' + nameArray[model.value] + '" on-edit="viewProduct(question)"></questions>'))(scope);
                     $compile($('#contDiv').html('<jp-product-scope1 items="' + nameArray[model.value] + '" on-edit="viewProduct(ev,question)" ></jp-product-scope1>'))(scope);
-                    //console.log("changed");
+                    console.log("changed");
                 }
             });
         }
@@ -183,7 +184,7 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
             onEdit: '&'
         },
         controller: function ($scope) {
-            //console.log("items: " + $scope.items)
+            console.log("items: " + $scope.items)
         },
         template: '<p>' +
           '<span id="item{{index}}" ng:repeat="(index, item) in items" '

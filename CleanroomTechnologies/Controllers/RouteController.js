@@ -1,9 +1,9 @@
-﻿var app = angular.module('ppaApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives','ngAnimate', 'ui.bootstrap']);
+﻿var app = angular.module('myApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives', 'ui.bootstrap']);
 
 app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider.when('/', {
         controller: 'MainController',
-        templateUrl: 'PPAIndex.html'
+        templateUrl: 'USP797Index.html'
     }).when('/Modular', {
         controller: 'MainController',
         templateUrl: 'Modular.html'
@@ -22,12 +22,18 @@ app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     }).when('/Softwall', {
         controller: 'MainController',
         templateUrl: 'Softwall.html'
+    }).when('/ProductRecent', {
+        controller: 'MainController',
+        templateUrl: 'ProductRecent.html'
     }).when('/Product', {
         controller: 'MainController',
         templateUrl: 'Product.html'
+    }).when('/ESD', {
+        controller: 'MainController',
+        templateUrl: 'ESD.html'
     }).when('/AboutUs', {
         controller: 'AboutUsController',
-        templateUrl: 'Views/AboutUs.html'
+        templateUrl: 'AboutUs.html'
     });
     AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
     //$locationProvider.html5Mode(true);

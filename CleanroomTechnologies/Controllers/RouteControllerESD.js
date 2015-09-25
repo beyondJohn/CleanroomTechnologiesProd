@@ -1,4 +1,4 @@
-﻿var app = angular.module('esdApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives', 'ngAnimate', 'ui.bootstrap']);
+﻿var app = angular.module('esdApp', ['ngRoute', 'ngResource', 'duScroll', 'angularytics', 'jpDirectives', 'ui.bootstrap']);
 
 app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider.when('/', {
@@ -22,6 +22,9 @@ app.config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     }).when('/Softwall', {
         controller: 'MainController',
         templateUrl: 'Softwall.html'
+    }).when('/ProductRecent', {
+        controller: 'MainController',
+        templateUrl: 'ProductRecent.html'
     }).when('/Product', {
         controller: 'MainController',
         templateUrl: 'Product.html'

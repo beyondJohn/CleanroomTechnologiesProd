@@ -19,7 +19,7 @@
                 var nameArray = ['HEPA Filtration Units', 'Biological Safety Cabinets', 'Modular', 'Softwall Cleanrooms', 'Furniture', 'Bouffant & Beard Covers', 'Facemasks & Hoods', 'Coats', 'Coveralls', 'StickyMats', 'Finger Cots', 'Gloves Vinyl', 'Gloves Latex', 'Gloves Nitrile'];
                 var countProductsArray = [];
                 scope.pageContent = '';
-                scope.pageContent += '<div class="container" id="2"><div class="row"><div class="col-sm-8">' +
+                scope.pageContent += '<div class="container"><div class="row"><div class="col-sm-8">' +
                     '<accordion close-others="oneAtATime">';
                 for (i = 0; i < nameArray.length ; i++)
                 {

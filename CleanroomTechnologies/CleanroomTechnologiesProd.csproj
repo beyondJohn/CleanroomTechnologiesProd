@@ -72,8 +72,9 @@
     <Content Include="JSON\BioSafetyCabinets.json" />
     <Content Include="JSON\Softwall.json" />
     <Content Include="JSON\Modular.json" />
-    <Content Include="JSON\LandingPage.json" />
-    <Content Include="JSON\Booties - Copy.json" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Views\Include\Scripts.html" />
+    <Content Include="Views\RepairProduct.html" />
     <Content Include="WebForm1.aspx" />
     <Content Include="JSON - Copy\BioSafetyCabinets.json" />
     <Content Include="JSON - Copy\Booties - Copy.json" />
@@ -171,6 +172,8 @@
     <Content Include="JSON\Coats.json" />
     <Content Include="JSON\Coveralls.json" />
     <Content Include="JSON\StickyMats.json" />
+    <Content Include="Scripts\bootstrap1.min.js" />
+    <Content Include="Scripts\ui.bootstrap.tpls-0.13.4.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

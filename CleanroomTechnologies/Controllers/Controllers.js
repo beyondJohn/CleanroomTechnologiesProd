@@ -291,18 +291,7 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         console.log("masterJSON: " + $scope.masterJSON.length);
     });
     masterJSONService = $scope.masterJSON;
-    var landingJSON = [];
-    $http.get('../JSON/landingpage.json').success(function (data) {
-        $scope.landingpageJSON = data;
-        landingJSON = JSON.parse(JSON.stringify(data));
-        //console.log("$scope.landingpage: " + JSON.parse(JSON.stringify($scope.landingpageJSON)));
-        $scope.landingpage = JSON.parse(JSON.stringify($scope.landingpageJSON));
-        landingPageService = $scope.landingpage;
-        for (i = 0; i < 2; i++) {
-            console.log("checking: " + $scope.landingpage[i].product);
-            console.log("checking Service: " + landingPageService[i].product);
-        }
-    });
+    
     
         //$scope.landingpage.title = landingPageService.title,
     //$scope.landingpage.product = landingPageService.product;
