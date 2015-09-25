@@ -1,5 +1,16 @@
 ﻿angular.module('jpDirectives').directive('jpLandingPageScope', function ($compile, $http, getJSONService, masterJSONService) {
     return {
+        //restrict: 'E',
+        //replace: true,
+        //scope: {
+        //    landingpage: '=',
+        //    onEdit: '&'
+        //},
+        //controller: function ($scope) {
+        //    console.log("items: " + $scope.items)
+        //},
+        //template: ''
+        //,
         link: function (scope, el, attrs) {
 
             //pass getJSON a parameter to get it to work. For some reason the getJSON var accesses the masterJSONService. Weird!
@@ -14,10 +25,14 @@
             //gets executed after $http get promise is completed above
             scope.getComplete = function (myService) {
                 scope.checkMaster = myService;
+                var productJSON = [];
+                productJSON = JSON.parse(JSON.stringify(scope.checkMaster, null, 4));
+                //console.log("JSON.parse(productJSON[0]): " + JSON.stringify(productJSON[0]));
                 //console.log("scope.checkMaster: " + scope.checkMaster[0].Listing.Price);//Works, do not edit/delete
                 //This array matches Consumables drop down selection to $scope variable of JSON object
                 var nameArray = ['HEPA Filtration Units', 'Biological Safety Cabinets', 'Modular', 'Softwall Cleanrooms', 'Furniture', 'Bouffant & Beard Covers', 'Facemasks & Hoods', 'Coats', 'Coveralls', 'StickyMats', 'Finger Cots', 'Gloves Vinyl', 'Gloves Latex', 'Gloves Nitrile'];
                 var countProductsArray = [];
+                
                 scope.pageContent = '';
                 scope.pageContent += '<div class="container"><div class="row"><div class="col-sm-8">' +
                     '<accordion close-others="oneAtATime">';
@@ -39,13 +54,13 @@
                         for (f = 0; f < (scope.checkMaster.length - 1) ; f++) {
                             if (nameArray[i] == scope.checkMaster[f].Category) {
                                 scope.pageContent += '' +
-                                '<a href="#">' +
+                                '<span ng-click="viewProduct(null,null,' + f + ')" style="cursor:pointer; text-decorate:underline;">' +
                                 scope.checkMaster[f].Listing.Title +
                                 '<br /><img src="'+
                                 scope.checkMaster[f].Listing.Pic +
                                 '" width="70" /><br />' +
                                 scope.checkMaster[f].Listing.Price +
-                                '</a><br /><br />';
+                                '</span><br /><br />';
                             }
                         }
                         scope.pageContent += '</accordion-group>';
@@ -58,13 +73,13 @@
                                         {
                                             if (nameArray[i] == scope.checkMaster[f].Category){
                                                 scope.pageContent += '' +
-                                                '<a href="#">' +
+                                                '<span ng-click="viewProduct(null,null,' + f + ')" style="cursor:pointer; text-decorate:underline;">' +
                                                 scope.checkMaster[f].Listing.Title +
                                                 '<br /><img src="' +
                                                 scope.checkMaster[f].Listing.Pic +
                                                 '" width="70" /><br />' +
                                                 scope.checkMaster[f].Listing.Price +
-                                                '</a><br /><br />';
+                                                '</span><br /><br />';
                                             }
                                         }
                         scope.pageContent += '</accordion-group>';

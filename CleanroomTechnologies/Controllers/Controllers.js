@@ -59,23 +59,36 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         //console.log("Yep: " + recentViewedProduct.Listing.Title);
         $scope.viewProduct("",recentViewedProduct);
     }
-    $scope.viewProduct = function (ev, question) {
+    $scope.viewProduct = function (ev, question, arrayIndex) {
         $scope.checkQuestion = question;
-        //console.log("Hello");
+        console.log("Hello from viewProduct: " + ev + " - " + question + " - " + arrayIndex);
+        //console.log(JSON.stringify($scope.masterJSON[arrayIndex], null, 4));
         //console.log($scope.checkQuestion);
         //get item JSON passed via the click event
         $scope.myJSON = [];
         var productJSON = [];
         
-        if (ev.target == undefined) {
-            //console.log("Undefinedooed!");
-            $scope.myJSON = $scope.checkQuestion;
-            //console.log($scope.myJSON.Listing.Title);
-            productJSON = JSON.parse(JSON.stringify($scope.checkQuestion, null, 4));
+        if (ev != null) {
+            if (ev.target == undefined) {
+                console.log("Hello from viewProductIF");
+                $scope.myJSON = $scope.checkQuestion;
+                console.log("$scope.myJSON.Listing.Title");
+                productJSON = JSON.parse(JSON.stringify($scope.checkQuestion, null, 4));
+            }
+            else {
+                console.log("Hello from viewProductELSEIF");
+                $scope.myJSON = ev.target.attributes.data.value;
+                productJSON = JSON.parse($scope.myJSON);
+            }
         }
-        else {
-            $scope.myJSON = ev.target.attributes.data.value;
-            productJSON = JSON.parse($scope.myJSON);
+        else{
+            console.log("Hello from viewProductELSE");
+            //console.log(JSON.stringify($scope.masterJSON[arrayIndex], null, 4));
+            $scope.myJSON = $scope.masterJSON[arrayIndex];
+            console.log("Hello from viewProductELSE after $scope.myJSON");
+            productJSON = JSON.parse(JSON.stringify($scope.myJSON, null, 4));
+            //console.log("JSON.stringify(productJSON: " + JSON.stringify(productJSON, null, 4));
+            console.log("productJSON.Listing.Title: " + productJSON.Listing.Title);
         }
         //parse the JSON object into a JS obect named 'productJSON'
         
@@ -84,6 +97,7 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         
 
         //$scope.product.* is bound to productService service
+        console.log("got here");
         $scope.product.title = productJSON.Listing.Title;
         $scope.product.img = productJSON.Listing.Pic;
         $scope.product.price = productJSON.Listing.Price;
@@ -135,9 +149,9 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
                 }
             }
         }
-        if (ev.target == undefined) {
-            //console.log("from recent: " + JSON.stringify($scope.recentlyViewed,null,4));
-        }
+        //if (ev.target == undefined) {
+        //    //console.log("from recent: " + JSON.stringify($scope.recentlyViewed,null,4));
+        //}
         //console.log("got Here Start: " + JSON.stringify($scope.recentlyViewed, null, 4));//works - do not edit
         //end recently viewed
         
@@ -160,8 +174,21 @@ app.controller('MainController', ['$scope', '$http', '$location', '$anchorScroll
         //set /Product page redirect
         //console.log("Before Page Call: " + $scope.product.title);
         //console.log("Before Page Call Service: " + productService.title);
-        if (ev.target == undefined) {
-            $scope.productPage = "/ProductRecent";
+        if (ev != null) {
+            if (ev.target == undefined) {
+                $scope.productPage = "/ProductRecent";
+            }
+            else {
+                $scope.productPage = "/Product";
+            }
+        }
+        else if (question != null) {
+            if (question != undefined) {
+                $scope.productPage = "/ProductRecent";
+            }
+            else {
+                $scope.productPage = "/Product";
+            }
         }
         else {
             $scope.productPage = "/Product";
