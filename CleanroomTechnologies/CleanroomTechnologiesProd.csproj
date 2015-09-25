@@ -74,7 +74,6 @@
     <Content Include="JSON\Modular.json" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Views\Include\Scripts.html" />
-    <Content Include="Views\RepairProduct.html" />
     <Content Include="WebForm1.aspx" />
     <Content Include="JSON - Copy\BioSafetyCabinets.json" />
     <Content Include="JSON - Copy\Booties - Copy.json" />

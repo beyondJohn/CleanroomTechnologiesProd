@@ -169,8 +169,8 @@ angular.module('jpDirectives').directive('jpProductViewScope', function ($compil
 
                     $('#1').html('<h3 id="1" ng-bind="Consumables">' + model.name + '</h3>');
                     //$compile($('#contDiv').html('<questions items="' + nameArray[model.value] + '" on-edit="viewProduct(question)"></questions>'))(scope);
-                    $compile($('#contDiv').html('<jp-product-scope1      on-edit="viewProduct(ev,question)" ></jp-product-scope1>'))(scope);
-                    console.log("changed");
+                    $compile($('#contDiv').html('<jp-product-scope1 items="' + nameArray[model.value] + '" on-edit="viewProduct(ev,question)" ></jp-product-scope1>'))(scope);
+                    console.log("jpSelectConsumables1: changed - " + model.name );
                 }
             });
         }
